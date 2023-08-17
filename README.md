@@ -24,7 +24,7 @@ Link the new repo using the token created earlier
 ![Screenshot 2023-08-17 153134](https://github.com/kevingonzalez7997/Deploy_1.1/assets/59447523/1602f6a3-b693-4101-a30f-7f3e95c7514f)
 <br><br>If there is an error, open log files and inspect
 <br><br>
-In this case there were a few lines pointing towards the error such as
+In this case, there were a few lines pointing toward the error such as
 <ul>
   <li>ImportError while importing test module </li>
   <li>Hint: make sure your test modules/packages have valid Python names.</li>
@@ -34,8 +34,8 @@ In this case there were a few lines pointing towards the error such as
 It seemed like a file wasn't found in test_app.py
 <br>Open test_app.py to see what it is doing
 <br><b>"from application import app"</b> is another hint
-<br> lastly compared working V1 to V1.1 and we can clearly see that app.py should be application.py
-<br>rename and restest
+<br> Lastly compared working V1 to V1.1 and we can clearly see that app.py should be application.py
+<br> Rename and restest
 <br><br>
 If test runs are successful you can run in AWS
 <h2>AWS</h2>
@@ -58,5 +58,8 @@ Lastly, you have to finish setting up some settings for your EC2 instance such a
 While the EC2 instance is pending the running state, it is important not to forget to close your eyes and pray to increase the launch probability! 
 
 
-![Screenshot 2023-08-17 155820](https://github.com/kevingonzalez7997/Deploy_1.1/assets/59447523/bf4fdb12-9544-4b56-874a-4190c3967007)
+![Screenshot 2023-08-17 155820](https://github.com/kevingonzalez7997/Deploy_1.1/assets/59447523/bf4fdb12-9544-4b56-874a-4190c3967007) <br><br>
+![Deploy_v1 2](https://github.com/kevingonzalez7997/Deploy_1.1/assets/59447523/05cfc7c6-9683-4312-8125-84ad65aca0a8)
+
+
 
