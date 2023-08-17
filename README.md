@@ -57,3 +57,6 @@ Lastly, you have to finish setting up some settings for your EC2 instance such a
 <br><br>
 While the EC2 instance is pending the running state, it is important not to forget to close your eyes and pray to increase the launch probability! 
 
+
+![Screenshot 2023-08-17 155820](https://github.com/kevingonzalez7997/Deploy_1.1/assets/59447523/bf4fdb12-9544-4b56-874a-4190c3967007)
+
