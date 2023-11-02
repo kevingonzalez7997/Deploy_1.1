@@ -1,6 +1,7 @@
 ### Kevin Gonzalez 
 ### August 17, 2023
 
+
 # Purpose
 
 This project's purpose is to develop a URL Shortener application efficiently using Jenkins for source code management, building, and testing, and AWS Elastic Beanstalk for simplified deployment and scaling. By automating development and deployment processes, we aim to create a user-friendly URL Shortener, showcasing the power of modern DevOps practices
