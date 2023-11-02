@@ -1,65 +1,79 @@
-<h2>Setting Up GitHub</h2>
-First create a new repo this is where we will upload the app/This will be our staging environment
-<br><br>
-Upload the app files to the new repo
-<br><br>
-Make sure you get your token from GitHub for the repo that you have created (Jenkins will need this later)
-<h2>IAM</h2>
-Before you can test the code in Jenkins make sure you set up the correct IAM Permissions
-<br><br>
-you need  2 roles, one for Beanstalk and one for the EC2
-<br><br>
-add AWSElasticBeanstalkWebTier,workerTier,MulticontainerDocker as the permissions
-<br><br>
-This has to be done before you run it bc it will control who has access to what
-<h2>Jenkins</h2>
-login to Jenkins
-<br><br>
-Create a new item
-<br><br>
-Link the new repo using the token created earlier
-<br><br>
-<b>ERROR</b>
-<br><br>
-![Screenshot 2023-08-17 153134](https://github.com/kevingonzalez7997/Deploy_1.1/assets/59447523/1602f6a3-b693-4101-a30f-7f3e95c7514f)
-<br><br>If there is an error, open log files and inspect
-<br><br>
-In this case, there were a few lines pointing toward the error such as
-<ul>
-  <li>ImportError while importing test module </li>
-  <li>Hint: make sure your test modules/packages have valid Python names.</li>
-  <li>from application import app ModuleNotFoundError: <b>No module named 'application'</b></li>
-  <li>ERROR test_app.py</li>
-</ul>
-It seemed like a file wasn't found in test_app.py
-<br>Open test_app.py to see what it is doing
-<br><b>"from application import app"</b> is another hint
-<br> Lastly compared working V1 to V1.1 and we can clearly see that app.py should be application.py
-<br> Rename and restest
-<br><br>
-If test runs are successful you can run in AWS
-<h2>AWS</h2>
-Create an application to start!!
-<br><br>
-Give it a name
-<br><br>
-pick the platform (python 3.9)
-<br><br>
-upload the zipped file (from the new repo) make sure you zip without the parent folder!
-<br><br>
-select ElasticEC2 
-<br><br>
-pick default vpc
-<br><br>
-select az
-<br><br>
-Lastly, you have to finish setting up some settings for your EC2 instance such as root volume type and size
-<br><br>
-While the EC2 instance is pending the running state, it is important not to forget to close your eyes and pray to increase the launch probability! 
+### Kevin Gonzalez 
+### August 17, 2023
 
+# Purpose
+
+This project's purpose is to develop a URL Shortener application efficiently using Jenkins for source code management, building, and testing, and AWS Elastic Beanstalk for simplified deployment and scaling. By automating development and deployment processes, we aim to create a user-friendly URL Shortener, showcasing the power of modern DevOps practices
+
+### Setting Up GitHub
+GitHub, a prominent version control platform, is where Jenkins retrieves code through cloning. It offers essential tools for version tracking, collaborative coding, and efficient code repository management
+
+First, create a new repository; this will serve as SCM for the application.
+
+Next, upload the application files to the new repository.
+
+Make sure to obtain your GitHub token for the repository you've created (Jenkins will need this later).
+
+### IAM (Identity and Access Management)
+
+Before you can test the code in Jenkins, ensure you set up the correct IAM permissions.
+
+You need to configure two roles: one for Beanstalk and another for EC2.
+
+Add AWSElasticBeanstalkWebTier, workerTier, and MulticontainerDocker as the required permissions.
+
+This must be done before you run the code, as it controls access to resources.
+
+### Jenkins
+Jenkins, an open-source automation server, plays a crucial role in building, testing, deploying code, and distributing workloads. In this context, a dedicated node is responsible for automating the build and test steps within the infrastructure
+
+1. Create a new item.
+
+2. Link the new repository using the token created from Git Hub.
+
+3. Run build if errors occur refer to troubleshooting 
+
+### ElasticBean Stalk
+1. Create an application to start.
+
+3. Choose the platform (python 3.9).
+
+4. Upload the zipped file from the new repository, ensuring you zip it without the parent folder.
+
+5. Select ElasticEC2.
+
+6. Pick the default VPC.
+
+7. Choose the availability zone.
+
+8. launch
+
+### Troubleshooting: Error
+
+If an error occurs during execution, follow these steps:
+
+1. Check log files and inspect any error messages.
+
+2. In one case, a few lines were pointing to the error:
+
+    - ImportError while importing test module.
+    - Hint: make sure your test modules/packages have valid Python names.
+    - from application import app ModuleNotFoundError: No module named 'application'.
+    - ERROR test_app.py.
+
+3. It appeared that a file wasn't found in test_app.py.
+
+4. Open test_app.py to review its contents.
+
+5. The line "from application import app" provides another clue.
+
+6. Compare a working V1 to V1.1, and it becomes clear that app.py should be named application.py.
+
+7. Rename the file and retest.
+
+If test runs are successful, you can proceed to run in AWS.
+
+While the EC2 instance is pending the running state, don't forget to close your eyes and hope for an increased launch probability!
 
 ![Screenshot 2023-08-17 155820](https://github.com/kevingonzalez7997/Deploy_1.1/assets/59447523/bf4fdb12-9544-4b56-874a-4190c3967007) <br><br>
 ![Deploy_v1 2](https://github.com/kevingonzalez7997/Deploy_1.1/assets/59447523/05cfc7c6-9683-4312-8125-84ad65aca0a8)
-
-
-
